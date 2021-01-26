@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.panweb.model.Empleados;
@@ -22,6 +22,7 @@ import com.panweb.repo.IProductoRepo;
 
 
 @RestController
+@RequestMapping("/panaderia")
 public class RestPanController {
     
 	@Autowired
@@ -67,7 +68,6 @@ public class RestPanController {
 	
 	@DeleteMapping(value = "/eliminar/productos/{id}")
 	public void eliminarproductos (@PathVariable("id") Integer id) {
-		
 		repo1.deleteById(id);
 	}
 }
